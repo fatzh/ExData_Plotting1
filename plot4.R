@@ -31,22 +31,19 @@ png(filename="./plot4.png")
 par(mfcol = c(2, 2))
 
 ## this is actually plot 2, with a different Y label
-plot(d$Datetime, d$Global_active_power, type='n', ylab="Global Active Power", xlab='')
-lines(d$Datetime, d$Global_active_power)
+plot(d$Datetime, d$Global_active_power, type='l', ylab="Global Active Power", xlab='')
 
-## this is plot3 without the legend box
+## this is similar to plot3 without the legend box
 plot(rep(d$Datetime, 3), c(d$Sub_metering_1, d$Sub_metering_2, d$Sub_metering_3), type='n', ylab="Energy sub metering", xlab='')
 lines(d$Datetime, d$Sub_metering_1)
 lines(d$Datetime, d$Sub_metering_2, col="red")
 lines(d$Datetime, d$Sub_metering_3, col="blue")
 legend('topright', lwd=1, bty = "n",  col=c('black', 'red', 'blue'), legend=c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 
-## third plot
-plot(d$Datetime, d$Voltage, type='n', ylab='Voltage', xlab='datetime')
-lines(d$Datetime, d$Voltage)
+## plot date versus voltage, only lines, and setting labels
+plot(d$Datetime, d$Voltage, type='l', ylab='Voltage', xlab='datetime')
 
-## and last plot
-plot(d$Datetime, d$Global_reactive_power, type='n', xlab='datetime', ylab='Global_reactive_power')
-lines(d$Datetime, d$Global_reactive_power)
+## plot date versus global reactive power, only lines, and setting the labels
+plot(d$Datetime, d$Global_reactive_power, type='l', xlab='datetime', ylab='Global_reactive_power')
 
 dev.off()

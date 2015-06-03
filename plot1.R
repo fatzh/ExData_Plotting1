@@ -27,7 +27,7 @@ d$Datetime <- strptime(d$Datetime, "%d/%m/%Y %H:%M:%S")
 ## write output in a PNG file
 png(filename="./plot1.png")
 
-## Plot 1
+## Plot an histogram, red, using the gloabl active power data. Also setting the axis label and the main title
 hist(d$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
 
 ## close PNG file

@@ -27,7 +27,8 @@ d$Datetime <- strptime(d$Datetime, "%d/%m/%Y %H:%M:%S")
 ## write output in a PNG file
 png(filename="./plot2.png")
 
-plot(d$Datetime, d$Global_active_power, type='n', ylab="Global Active Power (kilowatts)", xlab='')
-lines(d$Datetime, d$Global_active_power)
+## plotting the date versus global active power, with lines, and setting the labels
+plot(d$Datetime, d$Global_active_power, type='l', ylab="Global Active Power (kilowatts)", xlab='')
 
+## closing png device
 dev.off()
